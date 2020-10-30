@@ -1,11 +1,12 @@
 #!/bin/bash
 
-if cat ForLoopPractice.java | grep -q "ReadyForSubmission=YES"; then
+ASSIGNMENT=Addition
+
+if cat $ASSIGNMENT.java | grep -q "ReadyForSubmission=YES"; then
   curl -X POST \
        -H "Content-Type: multipart/form-data" \
-       -F "codefile=@ForLoopPractice.java" \
-       https://Loop120-Grading-Server.latinacadcs.repl.co
+       -F "codefile=@$ASSIGNMENT.java" \
+       http://localhost:8080/
 else
-  javac ForLoopPractice.java
-  java ForLoopPractice
+  javac $ASSIGNMENT.java && java $ASSIGNMENT
 fi
