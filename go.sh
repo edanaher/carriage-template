@@ -21,6 +21,7 @@ if ! [ -f $ASSIGNMENT.java ]; then
 fi
 
 if cat $ASSIGNMENT.java | grep -q "ReadyForSubmission=YES"; then
+  echo "Submitting... please be patient"
   curl -X POST \
        -H "Content-Type: multipart/form-data" \
        -F "codefile=@$ASSIGNMENT.java" \

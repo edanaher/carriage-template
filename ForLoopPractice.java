@@ -55,6 +55,7 @@ public class ForLoopPractice {
  	}
  
  	public static void blaFiveTimes() {
+    throw new UnsupportedOperationException("Replace with your code!");
     //Complete this method.
  
     /* It should print out “BLA” 5 times, with spaces between each “BLA”. */
